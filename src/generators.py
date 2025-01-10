@@ -11,11 +11,9 @@ def get_transaction_descriptions(transactions):
 
 def get_card_number_generator(el_start: int, el_stop: int):
     """Функция генератора номера банковской карты"""
-    nums = list(str(x).zfill(16) for x in range(el_start, (el_stop + 1)))
-    num = 0
-    while True:
-        yield nums[num][:4] + " " + nums[num][4:8] + " " + nums[num][8:12] + " " + nums[num][12:]
-        num += 1
+    for raw_num in range(el_start, el_stop + 1):
+        num = str(raw_num).zfill(16)
+        yield f"{num[:4]} {num[4:8]} {num[8:12]} {num[12:]}"
 
 
 if __name__ == "__main__":

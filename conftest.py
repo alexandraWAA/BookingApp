@@ -87,7 +87,6 @@ def usd_transactions():
         "description": "Перевод организации a",
     }
 
-
 @pytest.fixture
 def first_transaction_descriptions():
     return "Перевод организации a"
