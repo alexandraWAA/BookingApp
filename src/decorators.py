@@ -1,7 +1,7 @@
 import logging
 import time
 
-# logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 
 
 def log(filename=None):
