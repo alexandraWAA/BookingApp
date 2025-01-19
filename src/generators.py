@@ -1,6 +1,6 @@
 def get_filter_by_currency(transactions, bill="RUB"):
     """Функция выдачи транзакции заданной валюты"""
-    return (el for el in transactions if el["operationAmount"]["currency"]["code"] == bill)
+    return (el for el in transactions if el["operationAmount"]["currency"]["code"] == bill)  # noqa: E501
 
 
 def get_transaction_descriptions(transactions):
@@ -37,9 +37,11 @@ if __name__ == "__main__":
     ]
 
     filtered_result = get_filter_by_currency(transactions, "USD")
-    "Вывод {'operationAmount': {'currency': {'code': 'USD'}}, 'description': 'Перевод организации a'}"
+    (
+        "Вывод {'operationAmount': {'currency': {'code': 'USD'}}, " "'description': 'Перевод организации a'}")  # noqa: E501
     print(next(filtered_result))
-    "Вывод {'operationAmount': {'currency': {'code': 'USD'}}, 'description': 'Перевод организации с'}"
+    (
+        "Вывод {'operationAmount': {'currency': {'code': 'USD'}}, " "'description': 'Перевод организации с'}")  # noqa: E501
     print(next(filtered_result))
 
     descriptions = get_transaction_descriptions(transactions)
