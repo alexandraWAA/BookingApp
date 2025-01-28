@@ -1,8 +1,6 @@
 import json
 import os
-from pathlib import Path
 
-import data
 
 def read_transactions_from_json(file_path):
     """

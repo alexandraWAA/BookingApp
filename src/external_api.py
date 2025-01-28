@@ -1,7 +1,7 @@
 import os
 import requests
 from dotenv import load_dotenv
-import utils
+import src.utils
 
 load_dotenv()  # Загружаем переменные окружения из .env
 
